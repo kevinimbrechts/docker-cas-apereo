@@ -52,5 +52,4 @@ EXPOSE 8080 8443
 
 WORKDIR /cas-overlay
 
-#CMD ["/cas-overlay/run-cas.sh"]
-CMD ["sleep", "2000"]
+CMD ["/cas-overlay/run-cas.sh"]
