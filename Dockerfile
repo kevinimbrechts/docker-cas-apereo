@@ -9,10 +9,10 @@ LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
 ENV LASTREFRESH="20191005" \
     PATH=$PATH:$JRE_HOME/bin \
-	JAVA_VERSION="11.0.3" \
-	ZULU_VERSION="11.31.11-ca" \
-	JAVA_HASH="e0fdd6146c54829837a23c025363296c" \
-	CAS_VERSION="5.3" \
+    JAVA_VERSION="11.0.3" \
+    ZULU_VERSION="11.31.11-ca" \
+    JAVA_HASH="e0fdd6146c54829837a23c025363296c" \
+    CAS_VERSION="5.3" \
     JAVA_HOME="/opt/java-home" \
     PATH=$PATH:$JAVA_HOME/bin:.
 
