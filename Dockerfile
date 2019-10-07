@@ -52,4 +52,4 @@ EXPOSE 8080 8443
 
 WORKDIR /cas-overlay
 
-CMD ["/cas-overlay/run-cas.sh"]
+CMD ["./build.sh run"]
