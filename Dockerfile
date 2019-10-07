@@ -18,11 +18,11 @@ ENV LASTREFRESH="20191005" \
 
 RUN apk update && \
     apk add --no-cache --virtual utils \
-	        bash=5.0.0-r0 \
-	        wget=1.20.3-r0 \
-			tar=1.32-r0 \
-			unzip=6.0-r4 \
-			git=2.22.0-r0
+            bash=5.0.0-r0 \
+            wget=1.20.3-r0 \
+            tar=1.32-r0 \
+            unzip=6.0-r4 \
+            git=2.22.0-r0
 
 # Download Azul Java, verify the hash, install
 WORKDIR /tmp
