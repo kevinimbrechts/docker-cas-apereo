@@ -7,7 +7,7 @@ FROM alpine:3.10.2
 
 LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
-ENV LASTREFRESH="20191005" \
+ENV LASTREFRESH="20191007" \
     PATH=$PATH:$JRE_HOME/bin \
     JAVA_VERSION="11.0.3" \
     ZULU_VERSION="11.31.11-ca" \
@@ -37,8 +37,8 @@ RUN set -x && \
 WORKDIR /
 RUN git clone --depth 1 --single-branch -b ${CAS_VERSION} https://github.com/apereo/cas-overlay-template.git cas-overlay
 
+COPY /cas-overlay/pom.xml /cas-overlay/
 COPY etc/cas/ /etc/cas/
-COPY cas-overlay/run-cas.sh /cas-overlay
 
 RUN chmod 750 cas-overlay/maven && \
     chmod 750 cas-overlay/*.sh && \
