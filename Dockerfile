@@ -27,7 +27,7 @@ RUN apk update && \
 WORKDIR /tmp
 RUN set -x && \
     wget http://cdn.azul.com/zulu/bin/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz && \
-    tar -zxvf zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_x64.tar.gz -C /opt && \
+    tar -zxvf zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz -C /opt && \
     rm zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz && \
     ln -s /opt/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64/ /opt/java-home
 
