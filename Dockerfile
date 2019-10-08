@@ -9,8 +9,8 @@ LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
 ENV LASTREFRESH="20191005" \
     PATH=$PATH:$JRE_HOME/bin \
-    JAVA_VERSION="11.0.3" \
-    ZULU_VERSION="11.31.11-ca" \
+    JAVA_VERSION="8.0.172" \
+    ZULU_VERSION="8.30.0.1" \
     JAVA_HASH="e0fdd6146c54829837a23c025363296c" \
     CAS_VERSION="5.3" \
     JAVA_HOME="/opt/java-home" \
