@@ -1,0 +1,6 @@
+--- !<org.apereo.cas.services.RegexRegisteredService>
+serviceId: "https://cas.example.com/cas/status(/.+){0,}"
+name: "CAS Admin Dashboard"
+id: 10000003
+description: "CAS dashboard and administrative endpoints"
+evaluationOrder: 5000

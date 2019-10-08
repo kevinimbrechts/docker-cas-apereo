@@ -1,0 +1,6 @@
+--- !<org.apereo.cas.services.RegexRegisteredService>
+serviceId: "^(http|https)://.+"
+name: "HTTP(s)"
+id: 10000004
+description: "This service definition authorized all application urls that support HTTP protocols."
+evaluationOrder: 10000

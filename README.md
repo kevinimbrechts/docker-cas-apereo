@@ -7,7 +7,7 @@ If you want to use CAS behind a proxy, you have to create your own Docker Image 
 I have put some examples in `samples` directory (`./cas-overlay/.mvn/jvm.config` and `/root/.m2/settings.xml`).
 
 #### Dockerfile
-Here is a sample of a Dockerfile including proxy config :
+Here is a sample of a Dockerfile including proxy config:
 ```Dockerfile
 FROM kimbrechts/docker-cas-apereo
 
@@ -26,7 +26,7 @@ ENV http_proxy=${http_proxy} \
 
 ### Running CAS with JAAS
 If you want to run CAS with JAAS, you have to create your own `/cas-overlay/run-cas.sh` script with `-Djava.security.auth.login.config` option.
-Example :
+Example:
 ```bash
 #!/bin/bash
 export JAVA_HOME=/opt/jre-home
@@ -42,7 +42,7 @@ You need to create a `/etc/cas/config/jaas.config` file with some configuration.
 This image includes some Maven plugins (for basic auth, REST...). If you want to add or remove some plugins, you have put your own `pom.xml` in your own image (or with a `docker-compose`, for example).
 
 ### Change the timezone
-In your own `Dockerfile`, you can change the timezone like this :
+In your own `Dockerfile`, you can change the timezone like this:
 ```Dockerfile
 RUN apk add --no-cache --virtual tz tzdata && \
     ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime && \
@@ -52,9 +52,12 @@ RUN apk add --no-cache --virtual tz tzdata && \
 
 ## Using services
 Services are to be placed in `/etc/cas/services/` directory/. You can create a Docker volume or use you own `Dockerfile`.
+I created `yaml` examples in `samples/etc/cas/services` directory:
+* `CASAdminDashboard-10000003.yml`: Authorize Admin Dashboard
+* `HTTP-10000004.yml`: Authorize all HTTP(s) applications
 
 ## Install Kerberos
-If you have to use Kerberos, you need to create your own `Dockerfile` and install Kerberos, add your `krb5.conf` file and add your keytab file like this :
+If you have to use Kerberos, you need to create your own `Dockerfile` and install Kerberos, add your `krb5.conf` file and add your keytab file like this:
 ```Dockerfile
 FROM kimbrechts/docker-cas-apereo
 ...
@@ -68,5 +71,3 @@ RUN apk update && \
 COPY etc/krb5.conf /etc/
 COPY cas.HTTP.keytab /etc/cas/cas.HTTP.keytab
 ```
-
-## Use webflow
