@@ -11,7 +11,6 @@ ENV LASTREFRESH="20191007" \
     PATH=$PATH:$JRE_HOME/bin \
     JAVA_VERSION="8.0.222" \
     ZULU_VERSION="8.40.0.25-ca" \
-    #JAVA_HASH="e0fdd6146c54829837a23c025363296c" \
     CAS_VERSION="5.3" \
     JAVA_HOME="/opt/java-home" \
     PATH=$PATH:$JAVA_HOME/bin:.
@@ -28,10 +27,9 @@ RUN apk update && \
 WORKDIR /tmp
 RUN set -x && \
     wget http://cdn.azul.com/zulu/bin/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz && \
-#    echo "${JAVA_HASH}  zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_x64.tar.gz" | md5sum -c - && \
     tar -zxvf zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_x64.tar.gz -C /opt && \
-    rm zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_x64.tar.gz && \
-    ln -s /opt/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_x64/ /opt/java-home
+    rm zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz && \
+    ln -s /opt/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64/ /opt/java-home
 
 # Download CAS overlay project
 WORKDIR /
