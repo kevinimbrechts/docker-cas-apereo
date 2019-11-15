@@ -1,35 +1,18 @@
 #################################
 ###     APEREO CAS 5.3.10     ###
-###       ALPINE 3.10.9       ###
 #################################
 
-FROM alpine:3.10.2
+FROM kimbrechts/docker-jdk-alpine
 
 LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
-ENV LASTREFRESH="20191007" \
+ENV LASTREFRESH="20191115" \
     PATH=$PATH:$JRE_HOME/bin \
-    JAVA_VERSION="8.0.222" \
-    ZULU_VERSION="8.40.0.25-ca" \
-    CAS_VERSION="5.3" \
-    JAVA_HOME="/opt/java-home" \
-    PATH=$PATH:$JAVA_HOME/bin:.
+    CAS_VERSION="5.3"
 
 RUN apk update && \
     apk add --no-cache --virtual utils \
-            bash=5.0.0-r0 \
-            wget=1.20.3-r0 \
-            tar=1.32-r0 \
-            unzip=6.0-r4 \
             git=2.22.0-r0
-
-# Download Azul Java, verify the hash, install
-WORKDIR /tmp
-RUN set -x && \
-    wget http://cdn.azul.com/zulu/bin/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz && \
-    tar -zxvf zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz -C /opt && \
-    rm zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64.tar.gz && \
-    ln -s /opt/zulu${ZULU_VERSION}-jdk${JAVA_VERSION}-linux_musl_x64/ /opt/java-home
 
 # Download CAS overlay project
 WORKDIR /
