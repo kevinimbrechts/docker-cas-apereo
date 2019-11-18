@@ -6,13 +6,14 @@ FROM kimbrechts/docker-jdk-alpine
 
 LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
-ENV LASTREFRESH="20191115" \
+ENV LASTREFRESH="20191118" \
     PATH=$PATH:$JRE_HOME/bin \
     CAS_VERSION="5.3"
 
 RUN apk update && \
     apk add --no-cache --virtual utils \
-            git=2.22.0-r0
+            git=2.22.0-r0 \
+            bash=5.0.0-r0
 
 # Download CAS overlay project
 WORKDIR /
@@ -33,4 +34,5 @@ EXPOSE 8080 8443
 
 WORKDIR /cas-overlay
 
-CMD ["./build.sh run"]
+ENTRYPOINT ["build.sh"]
+CMD ["run"]
