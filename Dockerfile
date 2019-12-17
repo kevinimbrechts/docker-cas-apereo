@@ -6,13 +6,13 @@ FROM kimbrechts/docker-jdk-alpine:8.0.222
 
 LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
-ENV LASTREFRESH="20191119" \
+ENV LASTREFRESH="20191217" \
     PATH=$PATH:$JRE_HOME/bin \
     CAS_VERSION="5.3"
 
 RUN apk update && \
     apk add --no-cache --virtual utils \
-            git=2.22.0-r0 \
+            git=2.22.2-r0 \
             bash=5.0.0-r0
 
 # Download CAS overlay project
