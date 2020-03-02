@@ -6,7 +6,7 @@ FROM kimbrechts/docker-jdk-alpine:11.0.5
 
 LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
-ENV LASTREFRESH="20191217" \
+ENV LASTREFRESH="20200302" \
     PATH=$PATH:$JRE_HOME/bin \
     CAS_VERSION="6.1.x"
 
