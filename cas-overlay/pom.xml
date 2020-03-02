@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apereo.cas</groupId>
     <artifactId>cas-overlay</artifactId>
-    <version>6.1.2-SNAPSHOT</version>
+    <version>6.1.5</version>
     <packaging>war</packaging>
 
     <build>
@@ -61,7 +61,7 @@
     </build>
 
     <properties>
-        <cas.version>6.1.2</cas.version>
+        <cas.version>6.1.5</cas.version>
         <springboot.version>2.2.2.RELEASE</springboot.version>
         <java.version>11</java.version>
         <app.server>-tomcat</app.server>
