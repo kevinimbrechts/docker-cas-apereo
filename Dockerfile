@@ -1,5 +1,5 @@
 ################################
-###     APEREO CAS 6.1.2     ###
+###     APEREO CAS 6.2.x     ###
 ################################
 
 FROM kimbrechts/docker-jdk-alpine:14.0.2
