@@ -63,10 +63,10 @@ FROM kimbrechts/docker-cas-apereo
 ...
 RUN apk update && \
     apk add --no-cache --virtual krb \
-            krb5=1.17-r0 \
-            krb5-libs=1.17-r0 \
-            apache-mod-auth-kerb=5.4-r5 \
-            openssl=1.1.1d-r0
+            krb5=1.18.2-r0 \
+            krb5-libs=1.18.2-r0 \
+            apache-mod-auth-kerb=5.4-r6 \
+            openssl=1.1.1g-r0
 
 COPY etc/krb5.conf /etc/
 COPY cas.HTTP.keytab /etc/cas/cas.HTTP.keytab
