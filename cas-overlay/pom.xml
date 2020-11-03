@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apereo.cas</groupId>
     <artifactId>cas-overlay</artifactId>
-    <version>6.2.4</version>
+    <version>6.2.5</version>
     <packaging>war</packaging>
 
     <build>
