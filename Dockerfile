@@ -1,19 +1,19 @@
 ################################
-###     APEREO CAS 6.5.x     ###
+###     APEREO CAS 6.6.x     ###
 ################################
 
-FROM kimbrechts/docker-jdk-alpine:14.0.2-alp-3.16.0
+FROM kimbrechts/docker-jdk-alpine:17.0.9-alp-3.18.0
 
 LABEL maintainer="imbrechts.kevin+cas@protonmail.com"
 
-ENV LASTREFRESH="20220522" \
+ENV LASTREFRESH="20231030" \
     PATH=$PATH:$JRE_HOME/bin \
-    CAS_VERSION="6.5.x"
+    CAS_VERSION="6.6.x"
 
 RUN apk update && \
     apk add --no-cache --virtual utils \
-            git=2.36.1-r0 \
-            bash=5.1.16-r2
+            git=2.40.1-r0 \
+            bash=5.2.15-r5
 
 # Download CAS overlay project
 WORKDIR /
