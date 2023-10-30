@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apereo.cas</groupId>
     <artifactId>cas-overlay</artifactId>
-    <version>6.5.3</version>
+    <version>6.6.7</version>
     <packaging>war</packaging>
 
     <build>
@@ -28,7 +28,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.4.0</version>
                 <configuration>
                     <warName>cas</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -61,9 +61,9 @@
     </build>
 
     <properties>
-        <cas.version>6.5.3</cas.version>
-        <springboot.version>2.2.2.RELEASE</springboot.version>
-        <java.version>14</java.version>
+        <cas.version>6.6.7</cas.version>
+        <springboot.version>3.1.5</springboot.version>
+        <java.version>17</java.version>
         <app.server>-tomcat</app.server>
         <manifestFileToUse>${project.build.directory}/war/work/org.apereo.cas/cas-server-webapp${app.server}/META-INF/MANIFEST.MF</manifestFileToUse>
         <mainClassName>org.apereo.cas.web.CasWebApplication</mainClassName>
